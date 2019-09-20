@@ -184,7 +184,10 @@ public class Main {
         		if(f==1) 
         		f=0;
         		else
-        		out.write(",\n");
+            {       out.write(",");
+        			out.write("\n");
+            
+            }
 		if(c==1)
 		{
 			b=searchname(b);
