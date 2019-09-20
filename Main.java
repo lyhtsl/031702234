@@ -1,4 +1,3 @@
-package Main;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.HashMap;  
@@ -164,11 +163,11 @@ public class Main {
         }
         scan.close();*/
 		
-		File file1 = new File("input.txt");
+		File file1 = new File(args[0]);
 		InputStream is = new FileInputStream(file1);
         
         BufferedReader reader = new BufferedReader(new InputStreamReader(is,"UTF-8"));
-        File file = new File("answer.txt");
+        File file = new File(args[1]);
         
     	if(!file.exists()){
     		file.createNewFile();
