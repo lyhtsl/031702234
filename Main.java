@@ -1,3 +1,4 @@
+package Main;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.HashMap;  
@@ -9,7 +10,7 @@ public class Main {
 	private static Map<String,Object> map = new HashMap<String,Object>();
     
 	public static String searchnumber(String a) {
-		String REGEX="((13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d{8})";
+		String REGEX="(\\d{11})";
 		Pattern p = Pattern.compile(REGEX);
 	       Matcher m = p.matcher(a);
 	       if (m.find( )) {
@@ -121,7 +122,7 @@ public class Main {
 		return a;
 	}
 	public static int panduan(String a) {
-		String REGEX="(北京|.+天津|.+上海|.+重庆)";
+		String REGEX="(北京|.+?天津|.+?上海|.+?重庆)";
 		Pattern p = Pattern.compile(REGEX);
 	       Matcher m = p.matcher(a);
 	       if (m.find( )) {
@@ -142,11 +143,7 @@ public class Main {
 	    	   {
 	    		  
 	    		   return 1;
-	    	   }
-	    	   if(c.equals("2!"))
-	    	   {
-	    		  
-	    		   return 2;
+	    	  
 	    	   }  
 	        } 
 	       
@@ -162,7 +159,6 @@ public class Main {
              b = scan.nextLine();
         }
         scan.close();*/
-		
 		File file1 = new File(args[0]);
 		InputStream is = new FileInputStream(file1);
         
@@ -184,10 +180,10 @@ public class Main {
         		if(f==1) 
         		f=0;
         		else
-            {       out.write(",");
+        		{out.write(",");
         			out.write("\n");
-            
-            }
+        		
+        		}
 		if(c==1)
 		{
 			b=searchname(b);
@@ -205,7 +201,7 @@ public class Main {
 			out.write(s);
 		}
 		
-	if(c==2)
+		else
 	{
 		b=searchname(b);
 		if(panduan(b)==0)
